@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Flutter presentation</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="center">
+          <h2 class="title">Flutter</h2>
+        </section>
+        <section class="center">
+          <aside class="notes">
+            <p>
+              Googlov framework za native mobile app-ove, jedan codebase za both
+              android i ios
+            </p>
+          </aside>
+          <h3>Sto je flutter?</h3>
+        </section>
+        <section>
+          <h3>Why flutter?</h3>
+          <aside class="notes">
+            <p>
+              Fast develop - Hot reload mnogo brz Zadrzi state debugging vrlo
+              simple emulator ili fizicki device simple za postavit samo
+              pokrenut flutter run i to je to
+            </p>
+            <p>
+              Ui - Built in material design i cupertino widgeti Jako sirok
+              suport featura, platform awareness
+            </p>
+            <p>
+              Animations - Jako simple za developat 60fps (game engine u
+              pozadini)
+            </p>
+            <p>
+              Perfs - Ful native performance Compile to ARM & x64 machine code
+            </p>
+          </aside>
+          <p class="fragment fade-in">Fast development</p>
+          <p class="fragment fade-in">Nice ui out of the box</p>
+          <p class="fragment fade-in">Animations</p>
+          <p class="fragment fade-in">Native performance</p>
+        </section>
+        <section>
+          <h3>Why not flutter</h3>
+          <p class="fragment fade-in">No javascript :(</p>
+          <p class="fragment fade-in">
+            No npm i solve-all-my-issues.js
+          </p>
+          <p class="fragment fade-in">Dart</p>
+        </section>
+        <section>
+          <h3>Dart</h3>
+          <section>
+            <pre><code data-trim>
+							void main() {
+ 							 print('Hello, World!');
+							}
+						</code></pre>
+          </section>
+          <section>
+						<p>Variable</p>
+            <pre><code data-trim>
+							var name = 'Voyager I';
+							var year = 1977;
+							var antennaDiameter = 3.7;
+							var flybyObjects = ['Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+							var image = {
+								'tags': ['saturn'],
+								'url': '//path/to/saturn.jpg'
+							};
+						</code></pre>
+					</section>
+					<section>
+						<p>Funkcije</p>
+						<pre class="fragment fade-in"><code data-trim>
+							bool shouldWeUseFlutter(int parametar) {
+								return true;
+							}
+						</code></pre>
+						<pre class="fragment fade-in"><code data-trim>
+							var shouldWeUseFlutter = (int parametar) => true;
+						</code></pre>
+
+						<pre class="fragment fade-in"><code data-trim>
+							var shouldWeUseFlutter = (void Function(int) func) => func(5);
+							shouldWeUseFlutter((int a) => true);
+						</code></pre>
+					</section>
+					<section>
+					<p>Async</p>
+					<pre><code data-trim>
+						Future<bool> shouldWeUseFlutter() async {
+							var result = await fetchFromApi();
+							return result;
+						}
+						final shouldWe = await shouldWeUseFlutter();
+
+						bool shouldWe;
+						shouldWeUseFlutter().then((result) => shouldWe = result)
+					</code></pre>
+				</section>
+				<section class="center">
+					<aside class="notes">
+						<p>Basic stvari</p>
+						<p>get, set</p>
+						<p>Override operatora</p>
+						<p>Mixins, interface, extends</p>
+					</aside>
+					<p>Klase</p>
+				</section>
+				<section>
+					<p>Metadata (Za ivu)</p>
+				</section>
+				</section>
+				<section class="center"><h3>Flutter live demo</h3></section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        center: false,
+        history: true,
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/highlight/highlight.js", async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
